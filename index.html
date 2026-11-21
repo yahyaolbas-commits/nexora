@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+<title>NEXORA — عالمك الرقمي</title>
+<style>
+:root{--bg:#06101f;--panel:#0c1d33;--panel2:#102945;--line:#1b3b5d;--blue:#42b8ff;--cyan:#75ddff;--text:#edf7ff;--muted:#9bb6d0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#123c67 0,transparent 38%),radial-gradient(ellipse at 0 50%,#0a2542 0,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{width:min(1100px,92%);margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid #ffffff12}
+.brand{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900;letter-spacing:2px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#1c79c7,#52d5ff);display:grid;place-items:center;color:#041426;font-size:23px;box-shadow:0 0 28px #2daeff55}
+.status{font-size:12px;color:#7fffd0;border:1px solid #23765f;background:#0b302b;padding:7px 12px;border-radius:30px}
+.hero{padding:54px 0 35px;text-align:center}.eyebrow{color:var(--cyan);font-size:13px;letter-spacing:2px}.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.2;margin:14px 0;background:linear-gradient(90deg,#fff,#77d7ff);background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;margin:0 auto 24px;line-height:1.9}
+.search{max-width:570px;margin:auto;position:relative}.search input{width:100%;background:#0c2037;border:1px solid var(--line);border-radius:15px;padding:15px 48px 15px 16px;color:white;outline:none}.search span{position:absolute;right:17px;top:13px;color:var(--blue)}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:28px 0 16px}.section-title h2{font-size:20px;margin:0}.section-title small{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:linear-gradient(150deg,#102945,#0a1b30);border:1px solid var(--line);border-radius:17px;padding:18px;text-align:right;color:var(--text);transition:.2s;min-height:135px}.card:hover,.card.active{border-color:#49bfff;transform:translateY(-2px);box-shadow:0 10px 30px #008dff18}.ico{width:39px;height:39px;border-radius:12px;background:#123e65;color:#75d8ff;display:grid;place-items:center;font-size:20px;margin-bottom:13px}.card b{display:block;margin-bottom:5px}.card small{color:var(--muted)}
+.workspace{margin:25px 0 60px;background:linear-gradient(145deg,#0d2139,#09182a);border:1px solid var(--line);border-radius:22px;padding:22px;min-height:320px}.workspace h3{margin:0 0 7px;font-size:22px}.sub{color:var(--muted);margin:0 0 18px;font-size:14px}
+label{display:block;color:#c8def1;font-size:13px;margin:12px 0 7px}textarea,input[type=text],select{width:100%;background:#061426;border:1px solid #244666;color:white;border-radius:12px;padding:13px;outline:none}textarea{min-height:105px;resize:vertical}textarea:focus,input:focus,select:focus{border-color:var(--blue)}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1;min-width:150px}.btn{border:0;border-radius:11px;padding:12px 17px;background:linear-gradient(100deg,#1689dc,#39c6f4);color:#041426;font-weight:800;margin-top:12px}.btn.secondary{background:#173653;color:#d8efff;border:1px solid #2b5274}.output{margin-top:14px;padding:13px;background:#061426;border:1px dashed #32658b;border-radius:12px;min-height:48px;white-space:pre-wrap;overflow-wrap:anywhere;color:#e8f8ff}.hidden{display:none!important}.tip{color:#89a9c5;font-size:12px;margin-top:10px}footer{border-top:1px solid #ffffff12;padding:22px 0 35px;color:#7896b2;text-align:center;font-size:12px}
+@media(max-width:760px){.cards{grid-template-columns:repeat(2,1fr)}.hero{padding-top:40px}.workspace{padding:17px}.section-title small{display:none}}
+@media(max-width:380px){.cards{grid-template-columns:1fr 1fr}.card{padding:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand"><div class="logo">✦</div>NEXORA</div><div class="status">● المنصة جاهزة</div></header>
+<section class="hero"><div class="eyebrow">YOUR DIGITAL UNIVERSE</div><h1>عالمك الرقمي يبدأ هنا</h1><p>مجموعة أدوات بسيطة وسريعة تساعدك على الإبداع والإنجاز. اختر خدمة وابدأ مباشرة، دون الحاجة إلى إنشاء حساب.</p>
+<div class="search"><span>⌕</span><input id="search" type="text" placeholder="ابحث عن أداة..." oninput="filterCards()"></div></section>
+<div class="section-title"><h2>استكشف الخدمات</h2><small>اختر أداة للبدء</small></div>
+<div class="cards" id="cards">
+<button class="card active" data-tool="decorate" data-name="زخرفة النصوص أسماء خطوط"><div class="ico">✍</div><b>زخرفة النصوص</b><small>أسماء وخطوط مميزة</small></button>
+<button class="card" data-tool="names" data-name="مولد أسماء يوزرات"><div class="ico">✧</div><b>مولّد الأسماء</b><small>أفكار أسماء جديدة</small></button>
+<button class="card" data-tool="bio" data-name="السيرة الذاتية بايو"><div class="ico">▤</div><b>مولّد البايو</b><small>وصف قصير لحسابك</small></button>
+<button class="card" data-tool="format" data-name="تنسيق النصوص ترتيب عكس"><div class="ico">⌘</div><b>تنسيق النصوص</b><small>ترتيب وتنظيف النص</small></button>
+</div>
+<section class="workspace" id="workspace"></section>
+<footer>NEXORA © 2026 — ابتكر. استكشف. أنجز.</footer>
+</div>
+<script>
+const workspace=document.getElementById('workspace');
+const templates={
+decorate:`<h3>✍ زخرفة النصوص</h3><p class="sub">اكتب اسمك أو عبارتك واختر شكلاً مناسباً.</p><label>النص</label><input id="source" type="text" placeholder="اكتب النص هنا..."><div class="row"><button class="btn" onclick="decorate()">إنشاء الزخارف</button><button class="btn secondary" onclick="clearOutput()">مسح</button></div><div id="result" class="output">ستظهر النتائج هنا...</div><p class="tip">بعض الزخارف تعتمد على الحروف اللاتينية؛ أما العربية فستحافظ على النص مع إضافة إطارات ورموز.</p>`,
+names:`<h3>✧ مولّد الأسماء</h3><p class="sub">أنشئ أفكار أسماء لحساباتك أو مشاريعك.</p><div class="row"><div><label>نوع الاسم</label><select id="nameType"><option value="fantasy">خيالي وفخم</option><option value="short">قصير وعصري</option><option value="tech">تقني</option><option value="soft">هادئ وأنيق</option></select></div><div><label>عدد النتائج</label><select id="nameCount"><option>5</option><option>10</option></select></div></div><button class="btn" onclick="generateNames()">ولّد أسماء</button><div id="result" class="output">اضغط على الزر لتوليد الأسماء...</div>`,
+bio:`<h3>▤ مولّد السيرة التعريفية</h3><p class="sub">أنشئ وصفاً قصيراً لحسابك الاجتماعي.</p><label>اهتماماتك أو المجال</label><input id="bioTopic" type="text" placeholder="مثلاً: التقنية، التصميم، الأنمي..."><div class="row"><div><label>الأسلوب</label><select id="bioStyle"><option value="mystery">غامض</option><option value="simple">بسيط</option><option value="creative">إبداعي</option></select></div></div><button class="btn" onclick="generateBio()">إنشاء البايو</button><div id="result" class="output">سيظهر البايو هنا...</div>`,
+format:`<h3>⌘ تنسيق النصوص</h3><p class="sub">نظّف النص أو اعكس ترتيبه أو جهّزه للنسخ.</p><label>النص</label><textarea id="formatSource" placeholder="الصق النص هنا..."></textarea><div class="row"><button class="btn" onclick="formatText('trim')">إزالة الفراغات الزائدة</button><button class="btn secondary" onclick="formatText('reverse')">عكس النص</button><button class="btn secondary" onclick="formatText('lines')">ترتيب الأسطر</button></div><div id="result" class="output">ستظهر النتيجة هنا...</div>`
+};
+function showTool(tool){workspace.innerHTML=templates[tool];document.querySelectorAll('.card').forEach(c=>c.classList.toggle('active',c.dataset.tool===tool))}
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>showTool(c.dataset.tool)));
+function filterCards(){let q=document.getElementById('search').value.trim().toLowerCase();document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hidden',!(c.dataset.name+' '+c.innerText).toLowerCase().includes(q)))}
+function setResult(s){let r=document.getElementById('result');if(r)r.textContent=s}
+function copyResult(){let s=document.getElementById('result')?.textContent||'';navigator.clipboard?.writeText(s).then(()=>alert('تم نسخ النتيجة')).catch(()=>alert('تعذر النسخ تلقائياً؛ حدّد النص وانسخه.'))}
+function decorate(){let s=document.getElementById('source').value.trim();if(!s)return setResult('اكتب نصاً أولاً.');let out=[`『 ${s} 』`,`꧁ ${s} ꧂`,`★彡 ${s} 彡★`,`༺ ${s} ༻`,`【 ${s} 】`,`✦ ${s} ✦`,`⫷ ${s} ⫸`];setResult(out.join('\\n'));addCopyButton()}
+function addCopyButton(){let old=document.getElementById('copyBtn');if(old)old.remove();let b=document.createElement('button');b.id='copyBtn';b.className='btn secondary';b.textContent='نسخ النتائج';b.onclick=copyResult;document.getElementById('result').after(b)}
+function clearOutput(){document.getElementById('source').value='';setResult('ستظهر النتائج هنا...')}
+function generateNames(){let sets={fantasy:['Aether','Nexaris','Veloria','Zerion','Astryx','Nythera','Orvex','Kaelith','Veyron','Eclipsa'],short:['Nexo','Zyro','Vexa','Arix','Kiro','Zuno','Lumi','Rivo','Mavi','Oryn'],tech:['ByteNova','CyberNex','PixelCore','NexaLab','QuantumX','DataWave','CodeOrbit','TechLoom','CloudBit','NeuroGrid'],soft:['Lunelle','Aurelia','Mirelle','Elowen','Sereni','Noelia','Aveline','Soluna','Elaris','Melora']};let arr=[...sets[document.getElementById('nameType').value]].sort(()=>Math.random()-.5).slice(0,+document.getElementById('nameCount').value);setResult(arr.map((n,i)=>(i+1)+'. '+n).join('\\n'));addCopyButton()}
+function generateBio(){let t=document.getElementById('bioTopic').value.trim()||'عالم الإبداع';let s=document.getElementById('bioStyle').value;let a={mystery:[`「 ${t} 」\\nأترك أثري بصمت، وأصنع عالمي بطريقتي. ✦`,`لا أبحث عن الضجيج؛ شغفي هو ${t}. ◈`],simple:[`مهتم بـ ${t} ✨\\nأتعلم شيئاً جديداً كل يوم.`,`هنا أشارك رحلتي في ${t} 🚀`],creative:[`من فكرة صغيرة إلى عالم من ${t} ✧\\nالإبداع أسلوبي، والتجربة بدايتي.`,`أصنع، أتعلم، وأتطور في عالم ${t}. ⚡`]};setResult(a[s][Math.floor(Math.random()*a[s].length)]);addCopyButton()}
+function formatText(mode){let s=document.getElementById('formatSource').value;let out=s;if(mode==='trim')out=s.split('\\n').map(x=>x.trim().replace(/\\s+/g,' ')).filter(Boolean).join('\\n');if(mode==='reverse')out=[...s].reverse().join('');if(mode==='lines')out=s.split('\\n').map(x=>x.trim()).filter(Boolean).sort((a,b)=>a.localeCompare(b,'ar')).join('\\n');setResult(out||'لا يوجد نص لمعالجته.');addCopyButton()}
+showTool('decorate');
+</script>
+</body></html>
